@@ -1,0 +1,30 @@
+<h1>Building Log</h1>
+<% @arr = [] %>
+<% @buildinglogs.each do |log|%>
+	
+	<% if Time.now.day == log.created_at.day %>
+		<%= log.time %>
+		<%= log.state.upcase %>
+		<% @arr << [log.hour, log.minutes, log.ampm.upcase, log.state] %>
+	<% end %>
+<% end %>
+<% list = timeToNumber(@arr.uniq) %>
+<%= render 'buildinglogs/form'%>
+<div class="content">
+	<ul class="hour">
+		<% count = 0%>
+		<% 48.times do%>
+		
+		<li>
+			<% if list.include? count%>
+				<a class="box<%= count.to_s %>"></a>
+			<% else %>
+				<a></a>
+			<% end %>
+		</li>
+		<%count += 1%>
+		<% end %>
+	</ul>
+</div>
+
+

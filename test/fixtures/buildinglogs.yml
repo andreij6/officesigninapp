@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sign_in: MyString
+  sign_out: MyString
+
+two:
+  sign_in: MyString
+  sign_out: MyString

@@ -1,0 +1,33 @@
+<%= simple_form_for(@buildinglog) do |f| %>
+  <% if @buildinglog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@buildinglog.errors.count, "error") %> prohibited this buildinglog from being saved:</h2>
+
+      <ul>
+      <% @buildinglog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<div class="row collapse">
+    <div class="small-4 columns">
+      <%= f.input :hour, :label => false, collection: 1..12, hint: 'Hours' %>
+    </div>
+    <div class="small-4 columns">
+      <%= f.input :minutes, :label => false, collection: 0..59, hint: 'Minutes' %>
+    </div>
+    <div class="small-4 columns">
+      <%= f.input :ampm, collection: ["AM", "PM"], :label => false, :default => "AM"%>
+    </div>
+   </div>
+   
+  <div class="field">
+    <%= f.collection_radio_buttons :state, [["in", 'In'] ,["out", 'Out']], :first, :last %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Submit', :class => 'button'%>
+  </div>
+<% end %>
+
+

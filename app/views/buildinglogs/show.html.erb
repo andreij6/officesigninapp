@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Sign in:</b>
+  <%= @buildinglog.sign_in %>
+</p>
+
+<p>
+  <b>Sign out:</b>
+  <%= @buildinglog.sign_out %>
+</p>
+
+
+<%= link_to 'Edit', edit_buildinglog_path(@buildinglog) %> |
+<%= link_to 'Back', buildinglogs_path %>

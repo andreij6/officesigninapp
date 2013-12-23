@@ -1,0 +1,2 @@
+module BuildinglogsHelper
+end

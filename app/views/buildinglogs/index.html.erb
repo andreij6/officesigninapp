@@ -1,0 +1,24 @@
+<h1>Listing buildinglogs</h1>
+
+<table>
+  <tr>
+    <th>Sign in</th>
+    <th>Sign out</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @buildinglogs.each do |buildinglog| %>
+  <tr>
+    
+    <td><%= link_to 'Show', buildinglog %></td>
+    <td><%= link_to 'Edit', edit_buildinglog_path(buildinglog) %></td>
+    <td><%= link_to 'Destroy', buildinglog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Buildinglog', new_buildinglog_path %>
